@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multimodal-context-engine"
+version = "0.1.0"
+description = "Cross-modal context indexing and retrieval engine built from the LanguageBind source code with a LAVIS-derived registry layer."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=1.23,<2",
+    "torch>=1.13",
+    "transformers>=4.30",
+]
+
+[project.scripts]
+multimodal-context = "context_engine.cli:main"
+
+[project.urls]
+homepage = "https://github.com/oosuhada/multimodal-context-engine"
+repository = "https://github.com/oosuhada/multimodal-context-engine"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["languagebind*", "context_engine*", "third_party*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
