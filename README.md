@@ -23,6 +23,12 @@ text query ─ LanguageBind text encoder ─────────────
 - Pluggable fusion strategies using the bundled LAVIS registry mechanism.
 - Persistent NumPy + JSON index format; model weights and caches stay outside Git.
 
+## Fusion evaluation
+
+The repository now treats the `balanced` fusion strategy as a hypothesis rather than a descriptive feature. `evaluation/fusion_retrieval_benchmark.py` compares item-wise mean fusion with modality-balanced fusion over 10 fixed seeds on a controlled embedding fixture where duplicated noisy image frames can overwhelm one audio and one video observation. It reports Recall@1, MRR@5 and nDCG@5 with per-seed results and variance, and stores the machine-readable result under `evaluation/results/`.
+
+This experiment proves only the fusion-layer behavior under the declared synthetic imbalance. It does **not** claim end-to-end LanguageBind accuracy on real media; a held-out real-media dataset remains a separate requirement.
+
 ## Manifest format
 
 ```json

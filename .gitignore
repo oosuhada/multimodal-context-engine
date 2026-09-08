@@ -15,4 +15,5 @@ wandb/
 *.ckpt
 *.npy
 *.npz
+*.egg-info/
 

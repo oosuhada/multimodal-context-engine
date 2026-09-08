@@ -1,0 +1,200 @@
+{
+  "baseline": {
+    "fusion": "mean",
+    "mrr_at_5": {
+      "max": 0.5,
+      "mean": 0.493299,
+      "min": 0.480903,
+      "stddev": 0.005927
+    },
+    "ndcg_at_5": {
+      "max": 0.63093,
+      "mean": 0.625128,
+      "min": 0.615847,
+      "stddev": 0.005213
+    },
+    "recall_at_1": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "stddev": 0.0
+    },
+    "runs": [
+      {
+        "mrr_at_5": 0.49652777777777785,
+        "ndcg_at_5": 0.6282020503720523,
+        "recall_at_1": 0.0,
+        "seed": 0
+      },
+      {
+        "mrr_at_5": 0.5,
+        "ndcg_at_5": 0.6309297535714576,
+        "recall_at_1": 0.0,
+        "seed": 1
+      },
+      {
+        "mrr_at_5": 0.49652777777777785,
+        "ndcg_at_5": 0.6282020503720523,
+        "recall_at_1": 0.0,
+        "seed": 2
+      },
+      {
+        "mrr_at_5": 0.49652777777777785,
+        "ndcg_at_5": 0.6282020503720523,
+        "recall_at_1": 0.0,
+        "seed": 3
+      },
+      {
+        "mrr_at_5": 0.5,
+        "ndcg_at_5": 0.6309297535714576,
+        "recall_at_1": 0.0,
+        "seed": 4
+      },
+      {
+        "mrr_at_5": 0.4809027777777777,
+        "ndcg_at_5": 0.61584699920096,
+        "recall_at_1": 0.0,
+        "seed": 5
+      },
+      {
+        "mrr_at_5": 0.48784722222222227,
+        "ndcg_at_5": 0.6213024055997707,
+        "recall_at_1": 0.0,
+        "seed": 6
+      },
+      {
+        "mrr_at_5": 0.4895833333333333,
+        "ndcg_at_5": 0.6177853837053856,
+        "recall_at_1": 0.0,
+        "seed": 7
+      },
+      {
+        "mrr_at_5": 0.49652777777777773,
+        "ndcg_at_5": 0.6282020503720523,
+        "recall_at_1": 0.0,
+        "seed": 8
+      },
+      {
+        "mrr_at_5": 0.48854166666666665,
+        "ndcg_at_5": 0.6216728756165623,
+        "recall_at_1": 0.0,
+        "seed": 9
+      }
+    ]
+  },
+  "candidate": {
+    "fusion": "balanced",
+    "mrr_at_5": {
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "stddev": 0.0
+    },
+    "ndcg_at_5": {
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "stddev": 0.0
+    },
+    "recall_at_1": {
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "stddev": 0.0
+    },
+    "runs": [
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 0
+      },
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 1
+      },
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 2
+      },
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 3
+      },
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 4
+      },
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 5
+      },
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 6
+      },
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 7
+      },
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 8
+      },
+      {
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "recall_at_1": 1.0,
+        "seed": 9
+      }
+    ]
+  },
+  "dataset": {
+    "dimensions": 64,
+    "groups": 48,
+    "image_duplicates": 8,
+    "kind": "synthetic controlled embedding fixture",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "environment": {
+    "numpy": "1.26.4",
+    "python": "3.14.6"
+  },
+  "experiment": "multimodal-fusion-imbalance-v1",
+  "generated_at": "2026-09-08T13:23:18.179524+00:00",
+  "git_sha": "d9ab21d2b64463709c87d223e333cdc9a839d2ba",
+  "hypothesis": "Balanced fusion will improve retrieval when one noisy modality contributes many more items than the others.",
+  "limitations": [
+    "Synthetic embeddings isolate fusion behavior; they do not measure LanguageBind encoder quality on real media.",
+    "The corruption pattern intentionally stresses modality-count imbalance and is not a claim about production data frequency.",
+    "A real-media held-out set is still required before claiming end-to-end multimodal retrieval accuracy."
+  ],
+  "question": "Does modality-balanced fusion resist duplicated noisy frame embeddings better than item-wise mean fusion?"
+}

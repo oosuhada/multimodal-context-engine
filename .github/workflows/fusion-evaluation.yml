@@ -1,0 +1,32 @@
+name: fusion-evaluation
+
+on:
+  pull_request:
+  push:
+    branches: [main, "feat/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check 'numpy>=1.23,<2' pytest
+      - run: python -m pip install -e . --no-deps
+      - run: python -m pytest -q tests/test_context_index.py tests/test_fusion_benchmark.py
+      - run: python -m evaluation.fusion_retrieval_benchmark --output /tmp/fusion.json
+      - name: Enforce measured regression gate
+        run: |
+          python - <<'PY'
+          import json
+          data=json.load(open('/tmp/fusion.json'))
+          b=data['baseline']['recall_at_1']['mean']
+          c=data['candidate']['recall_at_1']['mean']
+          assert c > b, (b, c)
+          PY
