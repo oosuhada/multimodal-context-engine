@@ -5,9 +5,14 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 
 import numpy as np
-import torch
+
+try:  # The persisted/search-only index can run without the encoder runtime.
+    import torch
+except ImportError:  # pragma: no cover - exercised by lightweight CI/evaluation.
+    torch = None  # type: ignore[assignment]
 
 from .fusion import get_fusion
 
@@ -141,11 +146,11 @@ class ContextIndex:
         # 저장 당시 fusion 전략까지 복원해 동일 group vector를 재생성합니다.
         return cls(items=items, embeddings=embeddings, fusion=str(metadata["fusion"]))
 
-    def search(self, query_embedding: np.ndarray | torch.Tensor, top_k: int = 5) -> list[ContextResult]:
+    def search(self, query_embedding: np.ndarray | Any, top_k: int = 5) -> list[ContextResult]:
         """텍스트 query embedding과 가까운 fused context group을 반환합니다."""
 
         # PyTorch Tensor query를 NumPy로 변환합니다.
-        if isinstance(query_embedding, torch.Tensor):
+        if torch is not None and isinstance(query_embedding, torch.Tensor):
             query = query_embedding.detach().cpu().numpy()
         else:
             query = np.asarray(query_embedding, dtype=np.float32)
